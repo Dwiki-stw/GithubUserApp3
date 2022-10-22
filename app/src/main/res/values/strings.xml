@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">GitHub User</string>
+    <string name="name">Name</string>
+    <string name="username">Username</string>
+    <string name="company">Company</string>
+    <string name="location">Location</string>
+    <string name="share">SHARE</string>
+    <string name="search">search</string>
+    <string name="hint_search">Masukan Username</string>
+    <string name="repository">200\n Repository</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="followers">200</string>
+    <string name="following">200</string>
+    <string name="repo">200</string>
+    <string name="tab_text_1">Followers</string>
+    <string name="tab_text_2">Following</string>
+    <string name="url">URL account Github</string>
+    <string name="followers_view">FOLLOWERS</string>
+    <string name="following_view">FOLLOWING</string>
+    <string name="repository_view">REPOSITORY</string>
+    <string name="favorite_menu">Favorite User</string>
+    <string name="detail_menu">Detail User</string>
+    <string name="switch_appBar">Switch</string>
+    <string name="favorite_button">Favorite Button</string>
+    <string name="share_button">Share Button</string>
+    <string name="search_menu">Search User</string>
+
+</resources>

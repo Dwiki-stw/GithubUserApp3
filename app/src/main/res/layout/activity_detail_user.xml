@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.DetailUserActivity">
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimaryVariant"
+        app:tabTextColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@id/container_detail"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/view_pager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/tabs"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tabs"
+        app:layout_constraintEnd_toEndOf="@id/tabs"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/container_detail"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="?attr/colorPrimaryVariant"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_user"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            tools:src="@tools:sample/avatars"
+            android:layout_marginTop="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            style="@style/TextAppearance.AppCompat.Title"
+            tools:text="@string/name"
+            android:gravity="center"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@id/img_user"
+            app:layout_constraintEnd_toEndOf="@id/img_user"
+            app:layout_constraintTop_toBottomOf="@id/img_user"/>
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/username"
+            android:textSize="15sp"
+            android:textStyle="italic"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/tv_name"
+            app:layout_constraintStart_toStartOf="@id/tv_name"
+            app:layout_constraintEnd_toEndOf="@id/tv_name"/>
+
+        <TextView
+            android:id="@+id/tv_company"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/company"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_username"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/location"
+            android:textSize="15sp"
+            android:gravity="center"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_company"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageButton
+            android:id="@+id/btn_share"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ic_share"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/share_button" />
+
+        <ImageButton
+            android:id="@+id/btn_favorite"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:background="@drawable/ic_un_favorite"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@id/btn_share"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@string/favorite_button" />
+
+        <TextView
+            android:id="@+id/view_followers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/followers_view"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toStartOf="@id/view_following"
+            app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/view_following"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/following_view"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/view_repository"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/repository_view"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/view_following"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_repository"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/repo"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@id/view_repository"
+            app:layout_constraintStart_toStartOf="@id/view_repository"
+            app:layout_constraintEnd_toEndOf="@id/view_repository"/>
+
+        <TextView
+            android:id="@+id/tv_following"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/following"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@id/view_following"
+            app:layout_constraintStart_toStartOf="@id/view_following"
+            app:layout_constraintEnd_toEndOf="@id/view_following"/>
+
+        <TextView
+            android:id="@+id/tv_followers"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            tools:text="@string/followers"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toTopOf="@id/view_followers"
+            app:layout_constraintStart_toStartOf="@id/view_followers"
+            app:layout_constraintEnd_toEndOf="@id/view_followers"/>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:visibility="visible"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
