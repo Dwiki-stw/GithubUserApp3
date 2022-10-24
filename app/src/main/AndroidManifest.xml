@@ -21,7 +21,6 @@
             android:exported="false" />
         <activity
             android:name="com.example.githubuserapp2.ui.activity.DetailUserActivity"
-            android:label="@string/detail_menu"
             android:exported="false" />
         <activity
             android:name="com.example.githubuserapp2.ui.activity.MainActivity"

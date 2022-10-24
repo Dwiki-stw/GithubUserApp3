@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
         val searchView = binding.searchUser
 
 
-        //mainViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(MainViewModel::class.java)
+
         mainViewModel.listUser.observe(this) { listUser ->
             showListUser(listUser)
         }

@@ -32,7 +32,7 @@ class FollowersFragment : Fragment() {
 
         val username = arguments?.getString("USERNAME")
 
-        //followersViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(FollowersViewModel::class.java)
+
         followersViewModel.setUsername(username.toString())
         followersViewModel.followersUser.observe(viewLifecycleOwner){followers ->
             showFollowers(followers)

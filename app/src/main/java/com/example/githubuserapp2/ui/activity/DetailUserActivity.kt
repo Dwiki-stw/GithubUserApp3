@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.annotation.StringRes
 import androidx.lifecycle.ViewModelProvider
@@ -41,7 +42,7 @@ class DetailUserActivity : AppCompatActivity() {
         }.attach()
         supportActionBar?.elevation = 0f
 
-        //detailViewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(DetailViewModel::class.java)
+
         detailViewModel.setUsername(user)
         detailViewModel.detailUser.observe(this){detailUser ->
             showDetailUser(detailUser)
@@ -68,10 +69,12 @@ class DetailUserActivity : AppCompatActivity() {
             if (isFavorite){
                 it.setBackgroundResource(R.drawable.ic_un_favorite)
                 deleteFromDatabase()
+                Toast.makeText(this, UN_FAVORITE, Toast.LENGTH_SHORT).show()
             }
             else{
                 it.setBackgroundResource(R.drawable.ic_favorite)
                 addToDatabase()
+                Toast.makeText(this, ADD_FAVORITE, Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -100,14 +103,12 @@ class DetailUserActivity : AppCompatActivity() {
         var result = false
 
         for(user in userFavorite){
-            Log.d("check", "checkIsFavorite: ${user.username}")
             if (username == user.username){
                 result = true
                 break
             }
         }
 
-        Log.d("check", "checkIsResult: $result")
         if (result){
             binding.btnFavorite.setBackgroundResource(R.drawable.ic_favorite)
         }
@@ -137,6 +138,8 @@ class DetailUserActivity : AppCompatActivity() {
             R.string.tab_text_2
         )
         const val EXTRA_USER = "extra_user"
+        const val ADD_FAVORITE= "Add to Favorite"
+        const val UN_FAVORITE= "Delete from Favorite"
     }
 
 }
